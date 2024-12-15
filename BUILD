@@ -19,9 +19,25 @@ cc_library(
 )
 
 cc_library(
+    name = "dprint",
+    srcs = [
+        "src/dprint.cpp",
+    ],
+    hdrs = [
+        "include/dtools/dprint.hpp",
+    ],
+    includes = [
+        "include",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [],
+)
+
+cc_library(
     name = "dtools",
     visibility = ["//visibility:public"],
     deps = [
         ":hexdump",
+        ":dprint",
     ],
 )

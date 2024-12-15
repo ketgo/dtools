@@ -16,3 +16,14 @@ cc_test(
         "@gtest//:gtest_main",
     ],
 )
+
+cc_test(
+    name = "dprint_test",
+    srcs = [
+        "dprint_test.cpp",
+    ],
+    deps = [
+        "//:dprint",
+        "@gtest//:gtest_main",
+    ],
+)

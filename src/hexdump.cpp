@@ -87,7 +87,7 @@ std::ostream &operator<<(std::ostream &out, const HexDump &dump) {
     out << "0x" << std::setw(kAddressOffsetWidth) << std::hex << i << ": ";
 
     // Display the content as hex for the line
-    for (int j = 0; j < dump.format_.row_size; ++j) {
+    for (size_t j = 0; j < dump.format_.row_size; ++j) {
       if (i + j < dump.size_) {
         out << std::hex << std::setw(kHexWidth)
             << static_cast<int>(dump.data_[i + j]) << " ";
@@ -98,7 +98,7 @@ std::ostream &operator<<(std::ostream &out, const HexDump &dump) {
 
     // Display the content as ASCII for the line
     out << " ";
-    for (int j = 0; j < dump.format_.row_size; ++j) {
+    for (size_t j = 0; j < dump.format_.row_size; ++j) {
       if (i + j < dump.size_) {
         if (std::isprint(dump.data_[i + j])) {
           out << static_cast<char>(dump.data_[i + j]);
